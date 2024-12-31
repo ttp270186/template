@@ -3,6 +3,7 @@ package vn.ttp.template.infra.log.filter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.MDC;
+import org.springframework.util.StringUtils;
 import org.springframework.web.server.ServerWebExchange;
 import org.springframework.web.server.WebFilter;
 import org.springframework.web.server.WebFilterChain;
@@ -16,12 +17,12 @@ public class RequestLoggingFilter implements WebFilter {
   public Mono<Void> filter(ServerWebExchange exchange, WebFilterChain chain) {
     // Get the request ID from headers or create a new one if not available
     String requestId = exchange.getRequest().getHeaders().getFirst("X-Request-Id");
-    if (requestId == null) {
+    if (!StringUtils.hasText(requestId)) {
       requestId = "N/A"; // Default value if no ID is provided
     }
 
     // Set the request ID in MDC for logging correlation
-    MDC.put("X-Request-Id", requestId);
+    MDC.put("requestId", requestId);
 
     // Log the request details
     logger.info("Incoming request: {} {} | Request ID: {}",

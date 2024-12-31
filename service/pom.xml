@@ -30,8 +30,8 @@
 
 
         <!-- ......................................................................... -->
-        <!-- Project dependencies -->
-        <!-- Infra service dependency -->
+        <!-- Spring boot dependencies -->
+        <!-- Spring boot starter dependency -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
