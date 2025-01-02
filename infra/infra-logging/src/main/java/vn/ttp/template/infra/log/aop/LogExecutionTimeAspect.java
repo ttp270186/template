@@ -4,14 +4,12 @@ import lombok.RequiredArgsConstructor;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-import org.springframework.stereotype.Component;
 import vn.ttp.template.infra.log.formatter.DurationFormatterFactory;
 
 import java.time.Duration;
 import java.util.logging.Logger;
 
 @Aspect
-@Component
 @RequiredArgsConstructor
 public class LogExecutionTimeAspect {
 

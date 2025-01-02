@@ -1,7 +1,5 @@
 package vn.ttp.template.infra.log.formatter;
 
-import org.springframework.stereotype.Component;
-
 import java.time.Duration;
 import java.util.List;
 
@@ -9,7 +7,6 @@ import java.util.List;
  * Factory to choose the correct DurationFormatter based on the provided duration. If no formatter matches, returns a
  * default one.
  */
-@Component
 public class DurationFormatterFactory {
 
   private final List<DurationFormatter> durationFormatters;

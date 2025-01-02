@@ -7,17 +7,18 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.reactive.WebFluxTest;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.reactive.server.WebTestClient;
+import vn.ttp.template.RestApplication;
 import vn.ttp.template.infra.log.aop.LogExecutionTimeAspect;
 
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@WebFluxTest
 @ActiveProfiles("test")
+@SpringBootTest(classes = RestApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class LoggingFilterTest {
 
   @Autowired
@@ -49,7 +50,8 @@ class LoggingFilterTest {
     assertThat(requestLogsList.get(0).getFormattedMessage()).contains("Request ID: " + requestId);
 
     List<ILoggingEvent> executionLogsList = executionAppender.list; assertThat(executionLogsList).hasSize(1);
-    assertThat(executionLogsList.get(0).getFormattedMessage()).contains("Mono vn.ttp.template.service.GreetingService.greet(String) executed in ");
+    assertThat(executionLogsList.get(0).getFormattedMessage()).contains(
+        "Mono vn.ttp.template.service.GreetingService.greet(String) executed in ");
   }
 
   @Test
@@ -61,6 +63,7 @@ class LoggingFilterTest {
     assertThat(requestLogsList.get(0).getFormattedMessage()).contains("Request ID: N/A");
 
     List<ILoggingEvent> executionLogsList = executionAppender.list; assertThat(executionLogsList).hasSize(1);
-    assertThat(executionLogsList.get(0).getFormattedMessage()).contains("Mono vn.ttp.template.service.GreetingService.greet(String) executed in ");
+    assertThat(executionLogsList.get(0).getFormattedMessage()).contains(
+        "Mono vn.ttp.template.service.GreetingService.greet(String) executed in ");
   }
 }

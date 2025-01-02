@@ -16,13 +16,11 @@
     <packaging>pom</packaging>
 
     <description>Demo project for Spring Boot</description>
-    <properties>
-        <java.version>17</java.version>
-    </properties>
 
     <modules>
         <module>infra-model</module>
         <module>infra-logging</module>
         <module>infra-swagger</module>
+        <module>infra-renovate</module>
     </modules>
 </project>
