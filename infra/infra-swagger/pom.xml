@@ -1,63 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
         <groupId>vn.ttp.template</groupId>
-        <artifactId>parent</artifactId>
-        <version>1.0-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath>
+        <artifactId>infra</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath> <!-- Reference to the parent POM -->
     </parent>
 
-    <name>rest</name>
-    <artifactId>rest</artifactId>
+    <name>infra-swagger</name>
+    <artifactId>infra-swagger</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <description>Demo project for Spring Boot</description>
     <properties>
         <java.version>17</java.version>
     </properties>
+
     <dependencies>
         <!-- ......................................................................... -->
-        <!-- Project dependencies -->
-        <!-- Service dependency -->
-        <dependency>
-            <groupId>vn.ttp.template</groupId>
-            <artifactId>service</artifactId>
-        </dependency>
-        <!-- Swagger dependency -->
-        <dependency>
-            <groupId>vn.ttp.template</groupId>
-            <artifactId>infra-swagger</artifactId>
-        </dependency>
-        <!-- ......................................................................... -->
-
-
-        <!-- ......................................................................... -->
         <!-- Rest dependencies -->
-        <!-- Webflux -->
+        <!-- springdoc -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-webflux</artifactId>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webflux-ui</artifactId>
+            <version>2.7.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-webflux-ui</artifactId>
+            <version>1.8.0</version>
         </dependency>
         <!-- ......................................................................... -->
 
 
         <!-- ......................................................................... -->
         <!-- Test dependencies -->
-        <!-- Spring Boot Starter Test -->
+        <!-- Springboot starter test -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
-            <exclusions>
-                <!-- Exclude JUnit 4 to use JUnit 5 -->
-                <exclusion>
-                    <groupId>junit</groupId>
-                    <artifactId>junit</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <!-- ......................................................................... -->
     </dependencies>

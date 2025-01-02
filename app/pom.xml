@@ -26,11 +26,10 @@
             <groupId>vn.ttp.template</groupId>
             <artifactId>rest</artifactId>
         </dependency>
-        <!-- Infra service dependency -->
+        <!-- Infra logging dependency -->
         <dependency>
             <groupId>vn.ttp.template</groupId>
-            <artifactId>infra-service</artifactId>
-            <scope>provided</scope>
+            <artifactId>infra-logging</artifactId>
         </dependency>
         <!-- ......................................................................... -->
 

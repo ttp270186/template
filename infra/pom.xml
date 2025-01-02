@@ -22,19 +22,7 @@
 
     <modules>
         <module>infra-model</module>
-        <module>infra-service</module>
+        <module>infra-logging</module>
+        <module>infra-swagger</module>
     </modules>
-
-<!--    <dependencyManagement>-->
-<!--        <dependencies>-->
-<!--            &lt;!&ndash; ......................................................................... &ndash;&gt;-->
-<!--            &lt;!&ndash; Project BOM to manage versions of dependencies &ndash;&gt;-->
-<!--            <dependency>-->
-<!--                <groupId>vn.ttp.template.infra</groupId>-->
-<!--                <artifactId>model</artifactId>-->
-<!--                <version>0.0.1-SNAPSHOT</version>-->
-<!--            </dependency>-->
-<!--            &lt;!&ndash; ......................................................................... &ndash;&gt;-->
-<!--        </dependencies>-->
-<!--    </dependencyManagement>-->
 </project>
